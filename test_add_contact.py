@@ -24,69 +24,30 @@ class TestAddContact(unittest.TestCase):
     def open_add_contact_page(self, wd):
         wd.find_element_by_link_text("add new").click()
 
+    def set_value_to_element(self, wd, name, value):
+        element = wd.find_element_by_name(name)
+        element.click()
+        element.clear()
+        element.send_keys(value)
+
     def create_contact(self, wd, contact):
-        # input first name
-        wd.find_element_by_name("firstname").click()
-        wd.find_element_by_name("firstname").clear()
-        wd.find_element_by_name("firstname").send_keys(contact.first_name)
-        # input middle name
-        wd.find_element_by_name("middlename").click()
-        wd.find_element_by_name("middlename").clear()
-        wd.find_element_by_name("middlename").send_keys(contact.middle_name)
-        # input last name
-        wd.find_element_by_name("lastname").click()
-        wd.find_element_by_name("lastname").clear()
-        wd.find_element_by_name("lastname").send_keys(contact.last_name)
-        # input nickname
-        wd.find_element_by_name("nickname").click()
-        wd.find_element_by_name("nickname").clear()
-        wd.find_element_by_name("nickname").send_keys(contact.nickname)
-        # specify link to photo
+        # input general info
+        self.set_value_to_element(wd, name="firstname", value=contact.first_name)
+        self.set_value_to_element(wd, name="middlename", value=contact.middle_name)
+        self.set_value_to_element(wd, name="lastname", value=contact.last_name)
+        self.set_value_to_element(wd, name="nickname", value=contact.nickname)
         wd.find_element_by_name("photo").send_keys(contact.photo)
-        # input title
-        wd.find_element_by_name("title").click()
-        wd.find_element_by_name("title").clear()
-        wd.find_element_by_name("title").send_keys(contact.contact_title)
-        # input company name
-        wd.find_element_by_name("company").click()
-        wd.find_element_by_name("company").clear()
-        wd.find_element_by_name("company").send_keys(contact.company)
-        # input address
-        wd.find_element_by_name("address").click()
-        wd.find_element_by_name("address").clear()
-        wd.find_element_by_name("address").send_keys(contact.address)
-        # input home phone
-        wd.find_element_by_name("home").click()
-        wd.find_element_by_name("home").clear()
-        wd.find_element_by_name("home").send_keys(contact.phone_home)
-        # input mobile phone
-        wd.find_element_by_name("mobile").click()
-        wd.find_element_by_name("mobile").clear()
-        wd.find_element_by_name("mobile").send_keys(contact.phone_mobile)
-        # input work phone
-        wd.find_element_by_name("work").click()
-        wd.find_element_by_name("work").clear()
-        wd.find_element_by_name("work").send_keys(contact.phone_work)
-        # input fax
-        wd.find_element_by_name("fax").click()
-        wd.find_element_by_name("fax").clear()
-        wd.find_element_by_name("fax").send_keys(contact.fax)
-        # input first e-mail
-        wd.find_element_by_name("email").click()
-        wd.find_element_by_name("email").clear()
-        wd.find_element_by_name("email").send_keys(contact.email)
-        # input second e-mail
-        wd.find_element_by_name("email2").click()
-        wd.find_element_by_name("email2").clear()
-        wd.find_element_by_name("email2").send_keys(contact.email2)
-        # input third e-mail
-        wd.find_element_by_name("email3").click()
-        wd.find_element_by_name("email3").clear()
-        wd.find_element_by_name("email3").send_keys(contact.email3)
-        # input homepage
-        wd.find_element_by_name("homepage").click()
-        wd.find_element_by_name("homepage").clear()
-        wd.find_element_by_name("homepage").send_keys(contact.homepage)
+        self.set_value_to_element(wd, name="title", value=contact.contact_title)
+        self.set_value_to_element(wd, name="company", value=contact.company)
+        self.set_value_to_element(wd, name="address", value=contact.address)
+        self.set_value_to_element(wd, name="home", value=contact.phone_home)
+        self.set_value_to_element(wd, name="mobile", value=contact.phone_mobile)
+        self.set_value_to_element(wd, name="work", value=contact.phone_work)
+        self.set_value_to_element(wd, name="fax", value=contact.fax)
+        self.set_value_to_element(wd, name="email", value=contact.email)
+        self.set_value_to_element(wd, name="email2", value=contact.email2)
+        self.set_value_to_element(wd, name="email3", value=contact.email3)
+        self.set_value_to_element(wd, name="homepage", value=contact.homepage)
         # input birthday date
         wd.find_element_by_name("bday").click()
         Select(wd.find_element_by_name("bday")).select_by_visible_text(contact.birth_day)
@@ -94,9 +55,7 @@ class TestAddContact(unittest.TestCase):
         wd.find_element_by_name("bmonth").click()
         Select(wd.find_element_by_name("bmonth")).select_by_visible_text(contact.birth_month)
         wd.find_element_by_xpath("//option[@value='September']").click()
-        wd.find_element_by_name("byear").click()
-        wd.find_element_by_name("byear").clear()
-        wd.find_element_by_name("byear").send_keys(contact.birth_year)
+        self.set_value_to_element(wd, name="byear", value=contact.birth_year)
         # input anniversary date
         wd.find_element_by_name("aday").click()
         Select(wd.find_element_by_name("aday")).select_by_visible_text(contact.anniversary_day)
@@ -104,21 +63,11 @@ class TestAddContact(unittest.TestCase):
         wd.find_element_by_name("amonth").click()
         Select(wd.find_element_by_name("amonth")).select_by_visible_text(contact.anniversary_month)
         wd.find_element_by_xpath("(//option[@value='October'])[2]").click()
-        wd.find_element_by_name("ayear").click()
-        wd.find_element_by_name("ayear").clear()
-        wd.find_element_by_name("ayear").send_keys(contact.anniversary_year)
-        # input second address
-        wd.find_element_by_name("address2").click()
-        wd.find_element_by_name("address2").clear()
-        wd.find_element_by_name("address2").send_keys(contact.address2)
-        # input second home
-        wd.find_element_by_name("phone2").click()
-        wd.find_element_by_name("phone2").clear()
-        wd.find_element_by_name("phone2").send_keys(contact.home2)
-        # input notes
-        wd.find_element_by_name("notes").click()
-        wd.find_element_by_name("notes").clear()
-        wd.find_element_by_name("notes").send_keys(contact.notes)
+        self.set_value_to_element(wd, name="ayear", value=contact.anniversary_year)
+        # input secondary info
+        self.set_value_to_element(wd, name="address2", value=contact.address2)
+        self.set_value_to_element(wd, name="phone2", value=contact.home2)
+        self.set_value_to_element(wd, name="notes", value=contact.notes)
         # submit contact creation
         wd.find_element_by_xpath("(//input[@name='submit'])[2]").click()
 
