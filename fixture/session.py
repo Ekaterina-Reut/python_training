@@ -5,7 +5,6 @@ class SessionHelper:
 
     def login(self, username, password):
         wd = self.app.wd
-        self.app.open_home_page()
         self.app.set_value_to_element(name="user", value=username)
         self.app.set_value_to_element(name="pass", value=password)
         wd.find_element_by_xpath("//input[@value='Login']").click()
