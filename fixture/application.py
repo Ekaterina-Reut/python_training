@@ -3,6 +3,7 @@ from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
 from fixture.session import SessionHelper
+from fixture.group import GroupHelper
 
 
 class Application:
@@ -11,6 +12,7 @@ class Application:
         self.wd = webdriver.Firefox()
         self.wd.implicitly_wait(30)
         self.session = SessionHelper(self)
+        self.group = GroupHelper(self)
 
     # Auxiliary
 
@@ -30,30 +32,6 @@ class Application:
     def go_to_home_page(self):
         wd = self.wd
         wd.find_element_by_link_text("home").click()
-
-    # Groups
-
-    def open_groups_page(self):
-        wd = self.wd
-        wd.find_element_by_link_text("groups").click()
-
-    def create_group(self, group):
-        wd = self.wd
-        self.open_groups_page()
-        # init group creation
-        wd.find_element_by_name("new").click()
-        # fill group form
-        self.set_value_to_element(name="group_name", value=group.name)
-        self.set_value_to_element(name="group_header", value=group.header)
-        self.set_value_to_element(name="group_footer", value=group.footer)
-        # submit group creation
-        wd.find_element_by_name("submit").click()
-        # return to groups page
-        self.return_to_groups_page()
-
-    def return_to_groups_page(self):
-        wd = self.wd
-        wd.find_element_by_link_text("group page").click()
 
     # Contacts
 
