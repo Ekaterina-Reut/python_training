@@ -2,7 +2,7 @@
 from model.contact import Contact
 
 
-def test_contact(app):
+def test_add_contact(app):
     app.session.login(username="admin", password="secret")
     app.contact.create(Contact(first_name="Tre", middle_name="Hgf", last_name="Wfd", nickname="Jhfg",
                                photo="D:\\work\\img1200.jpg", contact_title="T title", company="T Company",

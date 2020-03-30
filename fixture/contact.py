@@ -10,9 +10,12 @@ class ContactHelper:
         wd = self.app.wd
         wd.find_element_by_link_text("add new").click()
 
-    def create(self, contact):
+    def go_to_home_page(self):
         wd = self.app.wd
-        self.open_add_contact_page()
+        wd.find_element_by_link_text("home").click()
+
+    def fill_contact_details(self, contact):
+        wd = self.app.wd
         # input general info
         self.app.set_value_to_element(name="firstname", value=contact.first_name)
         self.app.set_value_to_element(name="middlename", value=contact.middle_name)
@@ -50,11 +53,51 @@ class ContactHelper:
         self.app.set_value_to_element(name="address2", value=contact.address2)
         self.app.set_value_to_element(name="phone2", value=contact.home2)
         self.app.set_value_to_element(name="notes", value=contact.notes)
+
+    def create(self, contact):
+        wd = self.app.wd
+        self.open_add_contact_page()
+        # fill contact details
+        self.fill_contact_details(contact)
         # submit contact creation
         wd.find_element_by_xpath("(//input[@name='submit'])[2]").click()
         # go to home page
         self.go_to_home_page()
 
-    def go_to_home_page(self):
+    def delete_first_contact(self):
         wd = self.app.wd
-        wd.find_element_by_link_text("home").click()
+        self.go_to_home_page()
+        # select first_contact
+        wd.find_element_by_name("selected[]").click()
+        # submit deletion
+        wd.find_element_by_xpath("//input[@value='Delete']").click()
+        wd.switch_to_alert().accept()
+        # go to home page
+        self.go_to_home_page()
+
+    def delete_first_contact_on_edit_page(self):
+        wd = self.app.wd
+        self.go_to_home_page()
+        # select first_contact
+        wd.find_element_by_name("selected[]").click()
+        # open edit contact page
+        wd.find_element_by_css_selector("img[alt=\"Edit\"]").click()
+        # submit deletion
+        wd.find_element_by_xpath("(//input[@name='update'])[3]").click()
+        # go to home page
+        self.go_to_home_page()
+
+    def edit_first_contact(self, contact):
+        wd = self.app.wd
+        self.go_to_home_page()
+        # select_first_contact
+        wd.find_element_by_name("selected[]").click()
+        # open edit contact page
+        wd.find_element_by_css_selector("img[alt=\"Edit\"]").click()
+        # edit contact information
+        self.fill_contact_details(contact)
+        # submit updating
+        wd.find_element_by_name("update").click()
+        # go to home page
+        self.go_to_home_page()
+
