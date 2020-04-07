@@ -11,19 +11,26 @@ class Application:
     def __init__(self):
         self.wd = webdriver.Firefox()
         self.wd.implicitly_wait(30)
-        self.open_home_page()
         self.session = SessionHelper(self)
         self.group = GroupHelper(self)
         self.contact = ContactHelper(self)
 
     # Auxiliary
 
-    def set_value_to_element(self, name, value):
+    def is_valid(self):
+        try:
+            self.wd.current_url
+            return True
+        except:
+            return False
+
+    def change_field_value(self, name, value):
         wd = self.wd
-        element = wd.find_element_by_name(name)
-        element.click()
-        element.clear()
-        element.send_keys(value)
+        if value is not None:
+            element = wd.find_element_by_name(name)
+            element.click()
+            element.clear()
+            element.send_keys(value)
 
     # Home page
 
