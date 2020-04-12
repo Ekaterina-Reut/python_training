@@ -112,6 +112,7 @@ class ContactHelper:
         wd.find_element_by_name("update").click()
         # go to home page
         self.go_to_home_page()
+        self.contact_cache = None
 
     def count(self):
         wd = self.app.wd
