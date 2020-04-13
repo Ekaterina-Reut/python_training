@@ -21,9 +21,9 @@ class ContactHelper:
         if not (wd.current_url.endswith("/addressbook/") and len(wd.find_elements_by_xpath("//input[@value='Send e-Mail']")) > 0):
             wd.find_element_by_link_text("home").click()
 
-    def open_edin_contact_page(self):
+    def open_edit_contact_page_by_index(self, index):
         wd = self.app.wd
-        wd.find_element_by_css_selector("img[alt=\"Edit\"]").click()
+        wd.find_elements_by_css_selector("img[alt=\"Edit\"]")[index].click()
 
     def select_contact_by_index(self, index):
         wd = self.app.wd
@@ -51,18 +51,14 @@ class ContactHelper:
         # input birthday date
         wd.find_element_by_name("bday").click()
         Select(wd.find_element_by_name("bday")).select_by_visible_text(contact.birth_day)
-        wd.find_element_by_xpath("//option[@value='11']").click()
         wd.find_element_by_name("bmonth").click()
         Select(wd.find_element_by_name("bmonth")).select_by_visible_text(contact.birth_month)
-        wd.find_element_by_xpath("//option[@value='September']").click()
         self.app.change_field_value(name="byear", value=contact.birth_year)
         # input anniversary date
         wd.find_element_by_name("aday").click()
         Select(wd.find_element_by_name("aday")).select_by_visible_text(contact.anniversary_day)
-        wd.find_element_by_xpath("(//option[@value='17'])[2]").click()
         wd.find_element_by_name("amonth").click()
         Select(wd.find_element_by_name("amonth")).select_by_visible_text(contact.anniversary_month)
-        wd.find_element_by_xpath("(//option[@value='October'])[2]").click()
         self.app.change_field_value(name="ayear", value=contact.anniversary_year)
         # input secondary info
         self.app.change_field_value(name="address2", value=contact.address2)
@@ -101,8 +97,7 @@ class ContactHelper:
     def delete_contact_on_edit_page_by_index(self, index):
         wd = self.app.wd
         self.go_to_home_page()
-        self.select_contact_by_index(index)
-        self.open_edin_contact_page()
+        self.open_edit_contact_page_by_index(index)
         # submit deletion
         wd.find_element_by_xpath("(//input[@name='update'])[3]").click()
         # go to home page
@@ -115,8 +110,7 @@ class ContactHelper:
     def edit_contact_by_index(self, index, contact):
         wd = self.app.wd
         self.go_to_home_page()
-        self.select_contact_by_index(index)
-        self.open_edin_contact_page()
+        self.open_edit_contact_page_by_index(index)
         # edit contact information
         self.fill_contact_details(contact)
         # submit updating
