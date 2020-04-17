@@ -23,7 +23,7 @@ class ContactHelper:
 
     def open_edit_contact_page_by_index(self, index):
         wd = self.app.wd
-        wd.find_elements_by_css_selector("img[alt=\"Edit\"]")[index].click()
+        wd.find_elements_by_css_selector("img[alt='Edit']")[index].click()
 
     def select_contact_by_index(self, index):
         wd = self.app.wd
