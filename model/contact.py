@@ -27,9 +27,11 @@ class Contact:
                  anniversary_month=None,
                  anniversary_year=None,
                  address2=None,
-                 home2=None,
+                 phone_home2=None,
                  notes=None,
-                 id=None):
+                 id=None,
+                 all_phones_from_homepage=None,
+                 all_emails_from_homepage=None):
         self.first_name = first_name
         self.middle_name = middle_name
         self.last_name = last_name
@@ -53,9 +55,11 @@ class Contact:
         self.anniversary_month = anniversary_month
         self.anniversary_year = anniversary_year
         self.address2 = address2
-        self.home2 = home2
+        self.phone_home2 = phone_home2
         self.notes = notes
         self.id = id
+        self.all_phones_from_homepage = all_phones_from_homepage
+        self.all_emails_from_homepage = all_emails_from_homepage
 
     def __repr__(self):
         return "%s:%s %s" % (self.id, self.last_name, self.first_name)
