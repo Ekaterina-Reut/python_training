@@ -44,7 +44,8 @@ class ContactHelper:
         self.app.change_field_value(name="middlename", value=contact.middle_name)
         self.app.change_field_value(name="lastname", value=contact.last_name)
         self.app.change_field_value(name="nickname", value=contact.nickname)
-        wd.find_element_by_name("photo").send_keys(contact.photo)
+        if len(contact.photo) > 0:
+            wd.find_element_by_name("photo").send_keys(contact.photo)
         self.app.change_field_value(name="title", value=contact.contact_title)
         self.app.change_field_value(name="company", value=contact.company)
         self.app.change_field_value(name="address", value=contact.address)
@@ -57,16 +58,20 @@ class ContactHelper:
         self.app.change_field_value(name="email3", value=contact.email3)
         self.app.change_field_value(name="homepage", value=contact.homepage)
         # input birthday date
-        wd.find_element_by_name("bday").click()
-        Select(wd.find_element_by_name("bday")).select_by_visible_text(contact.birth_day)
-        wd.find_element_by_name("bmonth").click()
-        Select(wd.find_element_by_name("bmonth")).select_by_visible_text(contact.birth_month)
+        if len(contact.birth_day) > 0:
+            wd.find_element_by_name("bday").click()
+            Select(wd.find_element_by_name("bday")).select_by_visible_text(contact.birth_day)
+        if len(contact.birth_month) > 0:
+            wd.find_element_by_name("bmonth").click()
+            Select(wd.find_element_by_name("bmonth")).select_by_visible_text(contact.birth_month)
         self.app.change_field_value(name="byear", value=contact.birth_year)
         # input anniversary date
-        wd.find_element_by_name("aday").click()
-        Select(wd.find_element_by_name("aday")).select_by_visible_text(contact.anniversary_day)
-        wd.find_element_by_name("amonth").click()
-        Select(wd.find_element_by_name("amonth")).select_by_visible_text(contact.anniversary_month)
+        if len(contact.anniversary_day) > 0:
+            wd.find_element_by_name("aday").click()
+            Select(wd.find_element_by_name("aday")).select_by_visible_text(contact.anniversary_day)
+        if len(contact.anniversary_month) > 0:
+            wd.find_element_by_name("amonth").click()
+            Select(wd.find_element_by_name("amonth")).select_by_visible_text(contact.anniversary_month)
         self.app.change_field_value(name="ayear", value=contact.anniversary_year)
         # input secondary info
         self.app.change_field_value(name="address2", value=contact.address2)
