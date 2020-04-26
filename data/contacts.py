@@ -1,8 +1,6 @@
 from model.contact import Contact
-import random
-import string
 
-constant = [
+testdata = [
     Contact(first_name="first_name1", middle_name="middle_name1", last_name="last_name1",
             nickname="1Jhfg", photo="D:\\work\\img1200.jpg", contact_title="1T title",
             company="1T Company", address="1T address", phone_home="1456",
