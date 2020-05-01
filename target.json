@@ -6,7 +6,7 @@
   },
   "db": {
     "host":"127.0.0.1",
-    "database":"addressbook",
+    "name":"addressbook",
     "user":"root",
     "password":""
   }
