@@ -1,4 +1,5 @@
 from sys import maxsize
+import re
 
 
 class Contact:
@@ -60,9 +61,13 @@ class Contact:
         self.id = id
         self.all_phones_from_homepage = all_phones_from_homepage
         self.all_emails_from_homepage = all_emails_from_homepage
+        self.all_phones = self.merge_phones_like_homepage()
+        self.all_emails = self.merge_emails_like_homepage()
 
     def __repr__(self):
-        return "%s:%s %s" % (self.id, self.last_name, self.first_name)
+        return "%s:%s, %s, %s, %s, %s, %s" % (self.id, self.last_name, self.first_name,
+                                              self.all_phones_from_homepage, self.all_emails_from_homepage,
+                                              self.all_phones,self.all_emails)
 
     def __eq__(self, other):
         return (self.id is None or other.id is None or self.id == other.id) \
@@ -73,3 +78,16 @@ class Contact:
             return int(self.id)
         else:
             return maxsize
+
+    def clear(self, s):
+        return re.sub("[() -]", "", s)
+
+    def merge_phones_like_homepage(self):
+        return "\n".join(filter(lambda x: x != "",
+                                map(lambda x: self.clear(x),
+                                    filter(lambda x: x is not None,
+                                          [self.phone_home, self.phone_mobile, self.phone_work, self.phone_home2]))))
+
+    def merge_emails_like_homepage(self):
+        return "\n".join(filter(lambda x: x != "",
+                                filter(lambda x: x is not None, [self.email, self.email2, self.email3])))
