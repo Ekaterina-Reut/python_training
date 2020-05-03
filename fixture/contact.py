@@ -162,6 +162,21 @@ class ContactHelper:
         self.go_to_home_page()
         self.contact_cache = None
 
+    def add_contact_to_group(self, contact_id, group_id):
+        wd = self.app.wd
+        self.select_contact_by_id(contact_id)
+        wd.find_element_by_css_selector("select[name='to_group'] > option[value='%s']" % group_id).click()
+        wd.find_element_by_name("add").click()
+        self.go_to_home_page()
+
+    def remove_contact_from_group(self, contact_id, group_id):
+        wd = self.app.wd
+        wd.find_element_by_css_selector("select[name='group'] > option[value='%s']" % group_id).click()
+        WebDriverWait(wd, 10).until(EC.presence_of_element_located((By.CSS_SELECTOR, "input[name='remove']")))
+        self.select_contact_by_id(contact_id)
+        wd.find_element_by_name("remove").click()
+        self.go_to_home_page()
+
     def count(self):
         wd = self.app.wd
         self.go_to_home_page()
