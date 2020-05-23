@@ -4,7 +4,7 @@ from model.contact import Contact
 from random import randrange
 
 
-def test_add_contact_to_group(app):
+def test_dell_contact_from_group(app):
     db = ORMFixture(host="127.0.0.1", name="addressbook", user="root", password="")
 
     # Проверить есть ли группы, если нет, то создать
