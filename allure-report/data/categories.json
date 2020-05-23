@@ -1,0 +1,115 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "selenium.common.exceptions.InvalidArgumentException: Message: File not found:",
+      "children" : [ {
+        "name" : "test_add_contact[None:, , None, None]",
+        "uid" : "6a8c2a5a86d7485a",
+        "parentUid" : "254d56f509b57f8983982e914fd87787",
+        "status" : "broken",
+        "time" : {
+          "start" : 1590251731582,
+          "stop" : 1590251732852,
+          "duration" : 1270
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "None:, , None, None" ]
+      } ],
+      "uid" : "254d56f509b57f8983982e914fd87787"
+    }, {
+      "name" : "pony.orm.core.BindingError: Database object was already bound to MySQL provider",
+      "children" : [ {
+        "name" : "test_dell_contact_from_group",
+        "uid" : "f286df9bfa422345",
+        "parentUid" : "7c8f134f9a0d5a4c4911083b2e1859db",
+        "status" : "broken",
+        "time" : {
+          "start" : 1590251791317,
+          "stop" : 1590251791317,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "7c8f134f9a0d5a4c4911083b2e1859db"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  }, {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "AssertionError: assert [186:1Wfd, 1Tre, None, None,\\n 190:last_name+, first_name Fx^Nu.c, None, None,\\n 192:1Wfd, 1Tre, None, None,\\n 195:last_name-, first_namez `xf,g, None, None,\\n 196:1Wfd, 1Tre, None, None,\\n 197:last_name-, first_namez `xf,g, None, None,\\n 199:last_name-, first_namez `xf,g, None, None,\\n 200:last_name+, first_name Fx^Nu.c, None, None,\\n 201:last_name-, first_namez `xf,g, None, None,\\n 202:last_name+, first_name Fx^Nu.c, None, None,\\n 203:last_name-, first_namez `xf,g, None, None,\\n 204:last_name+, first_name Fx^Nu.c, None, None,\\n None:last_name V  , first_nameL&Zln#*)T, None, None] == [186:1Wfd, 1Tre, None, None,\\n 190:last_name+, first_name Fx^Nu.c, None, None,\\n 192:1Wfd, 1Tre, None, None,\\n 195:last_name-, first_namez `xf,g, None, None,\\n 196:1Wfd, 1Tre, None, None,\\n 197:last_name-, first_namez `xf,g, None, None,\\n 199:last_name-, first_namez `xf,g, None, None,\\n 200:last_name+, first_name Fx^Nu.c, None, None,\\n 201:last_name-, first_namez `xf,g, None, None,\\n 202:last_name+, first_name Fx^Nu.c, None, None,\\n 203:last_name-, first_namez `xf,g, None, None,\\n 204:last_name+, first_name Fx^Nu.c, None, None]",
+      "children" : [ {
+        "name" : "test_add_contact[None:last_name V  , first_nameL&Zln#*)T, None, None]",
+        "uid" : "71b395ee36bea5f2",
+        "parentUid" : "02d91489487b0d9972268700739fd3e0",
+        "status" : "failed",
+        "time" : {
+          "start" : 1590251733039,
+          "stop" : 1590251740920,
+          "duration" : 7881
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "None:last_name V  , first_nameL&Zln#*)T, None, None" ]
+      } ],
+      "uid" : "02d91489487b0d9972268700739fd3e0"
+    }, {
+      "name" : "AssertionError: assert [186:1Wfd, 1Tre, None, None,\\n 190:last_name+, first_name Fx^Nu.c, None, None,\\n 192:1Wfd, 1Tre, None, None,\\n 195:last_name-, first_namez `xf,g, None, None,\\n 196:1Wfd, 1Tre, None, None,\\n 197:last_name-, first_namez `xf,g, None, None,\\n 199:last_name-, first_namez `xf,g, None, None,\\n 200:last_name+, first_name Fx^Nu.c, None, None,\\n 201:last_name-, first_namez `xf,g, None, None,\\n 202:last_name+, first_name Fx^Nu.c, None, None,\\n 203:last_name-, first_namez `xf,g, None, None,\\n 204:last_name+, first_name Fx^Nu.c, None, None,\\n None:last_namef~\"vut+, first_name_j, None, None] == [186:1Wfd, 1Tre, None, None,\\n 190:last_name+, first_name Fx^Nu.c, None, None,\\n 192:1Wfd, 1Tre, None, None,\\n 195:last_name-, first_namez `xf,g, None, None,\\n 196:1Wfd, 1Tre, None, None,\\n 197:last_name-, first_namez `xf,g, None, None,\\n 199:last_name-, first_namez `xf,g, None, None,\\n 200:last_name+, first_name Fx^Nu.c, None, None,\\n 201:last_name-, first_namez `xf,g, None, None,\\n 202:last_name+, first_name Fx^Nu.c, None, None,\\n 203:last_name-, first_namez `xf,g, None, None,\\n 204:last_name+, first_name Fx^Nu.c, None, None]",
+      "children" : [ {
+        "name" : "test_add_contact[None:last_namef~\"vut+, first_name_j, None, None]",
+        "uid" : "6a54ed80045be4e5",
+        "parentUid" : "79c2c4e97cf51cc887a57dae3a8041f5",
+        "status" : "failed",
+        "time" : {
+          "start" : 1590251741215,
+          "stop" : 1590251749064,
+          "duration" : 7849
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "None:last_namef~\"vut+, first_name_j, None, None" ]
+      } ],
+      "uid" : "79c2c4e97cf51cc887a57dae3a8041f5"
+    }, {
+      "name" : "AssertionError: assert [186:1Wfd, 1Tre, None, None,\\n 190:last_name+, first_name Fx^Nu.c, None, None,\\n 192:1Wfd, 1Tre, None, None,\\n 195:last_name-, first_namez `xf,g, None, None,\\n 196:1Wfd, 1Tre, None, None,\\n 197:last_name-, first_namez `xf,g, None, None,\\n 199:last_name-, first_namez `xf,g, None, None,\\n 200:last_name+, first_name Fx^Nu.c, None, None,\\n 201:last_name-, first_namez `xf,g, None, None,\\n 202:last_name+, first_name Fx^Nu.c, None, None,\\n 203:last_name-, first_namez `xf,g, None, None,\\n 204:last_name+, first_name Fx^Nu.c, None, None,\\n 205:last_name-, first_namez `xf,g, None, None,\\n 206:last_name+, first_name Fx^Nu.c, None, None,\\n None:last_nameZ!?I, first_name_:R:~, None, None] == [186:1Wfd, 1Tre, None, None,\\n 190:last_name+, first_name Fx^Nu.c, None, None,\\n 192:1Wfd, 1Tre, None, None,\\n 195:last_name-, first_namez `xf,g, None, None,\\n 196:1Wfd, 1Tre, None, None,\\n 197:last_name-, first_namez `xf,g, None, None,\\n 199:last_name-, first_namez `xf,g, None, None,\\n 200:last_name+, first_name Fx^Nu.c, None, None,\\n 201:last_name-, first_namez `xf,g, None, None,\\n 202:last_name+, first_name Fx^Nu.c, None, None,\\n 203:last_name-, first_namez `xf,g, None, None,\\n 204:last_name+, first_name Fx^Nu.c, None, None,\\n 205:last_name-, first_namez `xf,g, None, None,\\n 206:last_name+, first_name Fx^Nu.c, None, None]",
+      "children" : [ {
+        "name" : "test_add_contact[None:last_nameZ!?I, first_name_:R:~, None, None]",
+        "uid" : "6984bb0af4a57b14",
+        "parentUid" : "4d9b3eb7c9c7f86827584553a6d6c831",
+        "status" : "failed",
+        "time" : {
+          "start" : 1590251765860,
+          "stop" : 1590251773945,
+          "duration" : 8085
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "None:last_nameZ!?I, first_name_:R:~, None, None" ]
+      } ],
+      "uid" : "4d9b3eb7c9c7f86827584553a6d6c831"
+    }, {
+      "name" : "AssertionError: assert 'addressq,lwqozG :N\\np47' == 'addressq,lwqozG :N\\r\\np47'",
+      "children" : [ {
+        "name" : "test_contact_info_on_home_page",
+        "uid" : "8985c7cc2a74fd69",
+        "parentUid" : "0ad29f1666bc97f2a89f80b281cdac86",
+        "status" : "failed",
+        "time" : {
+          "start" : 1590251791694,
+          "stop" : 1590251792640,
+          "duration" : 946
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "0ad29f1666bc97f2a89f80b281cdac86"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ]
+}

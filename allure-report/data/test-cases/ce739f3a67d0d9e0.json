@@ -1,0 +1,276 @@
+{
+  "uid" : "ce739f3a67d0d9e0",
+  "name" : "test_delete_some_group",
+  "fullName" : "test.test_del_group#test_delete_some_group",
+  "historyId" : "f4f569d06e801e1682377a866bb7b03e",
+  "time" : {
+    "start" : 1590251790456,
+    "stop" : 1590251791264,
+    "duration" : 808
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "stop",
+    "time" : {
+      "start" : 1590251723231,
+      "stop" : 1590251723231,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "check_ui",
+    "time" : {
+      "start" : 1590251790456,
+      "stop" : 1590251790456,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "db",
+    "time" : {
+      "start" : 1590251723231,
+      "stop" : 1590251723237,
+      "duration" : 6
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "app",
+    "time" : {
+      "start" : 1590251790155,
+      "stop" : 1590251790455,
+      "duration" : 300
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Add group if group list is empty",
+      "time" : {
+        "start" : 1590251790457,
+        "stop" : 1590251790461,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Given a non-empty group list",
+      "time" : {
+        "start" : 1590251790461,
+        "stop" : 1590251790466,
+        "duration" : 5
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Given a random group from the list",
+      "time" : {
+        "start" : 1590251790466,
+        "stop" : 1590251790467,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Delete the group from the list",
+      "time" : {
+        "start" : 1590251790467,
+        "stop" : 1590251791082,
+        "duration" : 615
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "The new group list is equal to the old list without the deleted group",
+      "time" : {
+        "start" : 1590251791082,
+        "stop" : 1590251791263,
+        "duration" : 181
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 5,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "stop::fin",
+    "time" : {
+      "start" : 1590251805389,
+      "stop" : 1590251806430,
+      "duration" : 1041
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "db::fin",
+    "time" : {
+      "start" : 1590251806431,
+      "stop" : 1590251806431,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "test"
+  }, {
+    "name" : "suite",
+    "value" : "test_del_group"
+  }, {
+    "name" : "host",
+    "value" : "EYAZEVICH"
+  }, {
+    "name" : "thread",
+    "value" : "7180-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test.test_del_group"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "4dd385bead292065",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590251246229,
+        "stop" : 1590251247014,
+        "duration" : 785
+      }
+    }, {
+      "uid" : "edda2446bbae7b13",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590250687170,
+        "stop" : 1590250688139,
+        "duration" : 969
+      }
+    }, {
+      "uid" : "c00b87b68b6274cc",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590250540133,
+        "stop" : 1590250540921,
+        "duration" : 788
+      }
+    }, {
+      "uid" : "4678f3842ae676da",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590250413059,
+        "stop" : 1590250413820,
+        "duration" : 761
+      }
+    }, {
+      "uid" : "6dbedbe6704c19fb",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590250290949,
+        "stop" : 1590250291683,
+        "duration" : 734
+      }
+    }, {
+      "uid" : "8803d27024f84fec",
+      "status" : "passed",
+      "time" : {
+        "start" : 1590250105123,
+        "stop" : 1590250105838,
+        "duration" : 715
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "ce739f3a67d0d9e0.json",
+  "parameterValues" : [ ]
+}

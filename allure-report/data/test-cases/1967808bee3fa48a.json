@@ -1,0 +1,190 @@
+{
+  "uid" : "1967808bee3fa48a",
+  "name" : "test_add_contact[None:last_name V  , first_nameL&Zln#*)T, None, None]",
+  "fullName" : "test.test_add_contact#test_add_contact",
+  "historyId" : "670b4886742b93ca75181b8c3b56eddc",
+  "time" : {
+    "start" : 1590250050159,
+    "stop" : 1590250058106,
+    "duration" : 7947
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError: assert [186:1Wfd, 1Tre, None, None,\\n 187:last_name-, first_namez `xf,g, None, None,\\n None:last_name V  , first_nameL&Zln#*)T, None, None] == [186:1Wfd, 1Tre, None, None, 187:last_name-, first_namez `xf,g, None, None]",
+  "statusTrace" : "app = <fixture.application.Application object at 0x0646E580>\ndb = <fixture.db.DbFixture object at 0x0646E3E8>\njson_contacts = None:last_name V  , first_nameL&Zln#*)T, None, None\n\n    def test_add_contact(app, db, json_contacts):\n        contact = json_contacts\n        with allure.step('Given a contact list'):\n            old_contacts = db.get_contact_list()\n        with allure.step('When I add a contact %s to the list' % contact):\n            app.contact.create(contact)\n        with allure.step('Then the new contact list is equal to the old list with the added contact'):\n            # assert len(old_contacts) + 1 == app.contact.count()\n            new_contacts = db.get_contact_list()\n            old_contacts.append(contact)\n>           assert sorted(old_contacts, key=Contact.id_or_max) == sorted(new_contacts, key=Contact.id_or_max)\nE           assert [186:1Wfd, 1Tre, None, None,\\n 187:last_name-, first_namez `xf,g, None, None,\\n None:last_name V  , first_nameL&Zln#*)T, None, None] == [186:1Wfd, 1Tre, None, None, 187:last_name-, first_namez `xf,g, None, None]\n\ntest\\test_add_contact.py:16: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "db",
+    "time" : {
+      "start" : 1590250039618,
+      "stop" : 1590250039627,
+      "duration" : 9
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "stop",
+    "time" : {
+      "start" : 1590250039618,
+      "stop" : 1590250039618,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "app",
+    "time" : {
+      "start" : 1590250050116,
+      "stop" : 1590250050158,
+      "duration" : 42
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError: assert [186:1Wfd, 1Tre, None, None,\\n 187:last_name-, first_namez `xf,g, None, None,\\n None:last_name V  , first_nameL&Zln#*)T, None, None] == [186:1Wfd, 1Tre, None, None, 187:last_name-, first_namez `xf,g, None, None]",
+    "statusTrace" : "app = <fixture.application.Application object at 0x0646E580>\ndb = <fixture.db.DbFixture object at 0x0646E3E8>\njson_contacts = None:last_name V  , first_nameL&Zln#*)T, None, None\n\n    def test_add_contact(app, db, json_contacts):\n        contact = json_contacts\n        with allure.step('Given a contact list'):\n            old_contacts = db.get_contact_list()\n        with allure.step('When I add a contact %s to the list' % contact):\n            app.contact.create(contact)\n        with allure.step('Then the new contact list is equal to the old list with the added contact'):\n            # assert len(old_contacts) + 1 == app.contact.count()\n            new_contacts = db.get_contact_list()\n            old_contacts.append(contact)\n>           assert sorted(old_contacts, key=Contact.id_or_max) == sorted(new_contacts, key=Contact.id_or_max)\nE           assert [186:1Wfd, 1Tre, None, None,\\n 187:last_name-, first_namez `xf,g, None, None,\\n None:last_name V  , first_nameL&Zln#*)T, None, None] == [186:1Wfd, 1Tre, None, None, 187:last_name-, first_namez `xf,g, None, None]\n\ntest\\test_add_contact.py:16: AssertionError",
+    "steps" : [ {
+      "name" : "Given a contact list",
+      "time" : {
+        "start" : 1590250050159,
+        "stop" : 1590250050161,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "When I add a contact None:last_name V  , first_nameL&Zln#*)T, None, None to the list",
+      "time" : {
+        "start" : 1590250050161,
+        "stop" : 1590250058102,
+        "duration" : 7941
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "Then the new contact list is equal to the old list with the added contact",
+      "time" : {
+        "start" : 1590250058102,
+        "stop" : 1590250058105,
+        "duration" : 3
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError: assert [186:1Wfd, 1Tre, None, None,\\n 187:last_name-, first_namez `xf,g, None, None,\\n None:last_name V  , first_nameL&Zln#*)T, None, None] == [186:1Wfd, 1Tre, None, None, 187:last_name-, first_namez `xf,g, None, None]\n",
+      "statusTrace" : "  File \"D:\\education\\python\\course\\Py_for_testers\\work\\python_training\\test\\test_add_contact.py\", line 16, in test_add_contact\n    assert sorted(old_contacts, key=Contact.id_or_max) == sorted(new_contacts, key=Contact.id_or_max)\n",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true,
+      "stepsCount" : 0,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true,
+    "stepsCount" : 3,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "db::fin",
+    "time" : {
+      "start" : 1590250119880,
+      "stop" : 1590250119880,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "stop::fin",
+    "time" : {
+      "start" : 1590250117585,
+      "stop" : 1590250119879,
+      "duration" : 2294
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "test"
+  }, {
+    "name" : "suite",
+    "value" : "test_add_contact"
+  }, {
+    "name" : "host",
+    "value" : "EYAZEVICH"
+  }, {
+    "name" : "thread",
+    "value" : "5472-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test.test_add_contact"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "json_contacts",
+    "value" : "None:last_name V  , first_nameL&Zln#*)T, None, None"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "1967808bee3fa48a.json",
+  "parameterValues" : [ "None:last_name V  , first_nameL&Zln#*)T, None, None" ]
+}

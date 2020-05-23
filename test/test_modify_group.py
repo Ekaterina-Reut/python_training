@@ -1,21 +1,29 @@
 # -*- coding: utf-8 -*-
 from model.group import Group
 import random
+import allure
+
 
 def test_modify_some_group(app, db, check_ui):
-    if len(db.get_group_list()) == 0:
-        app.group.create(Group(name='For modify'))
-    old_groups = db.get_group_list()
-    group_old = random.choice(old_groups)
-    group_new = Group(id=group_old.id, name="lhjg", header="ytrff", footer="qwew")
-    app.group.modify_group_by_id(group_old.id, group_new)
-    assert len(old_groups) == app.group.count()
-    new_groups = db.get_group_list()
-    old_groups.remove(group_old)
-    old_groups.append(group_new)
-    assert sorted(old_groups, key=Group.id_or_max) == new_groups
-    if check_ui:
-        assert sorted(new_groups, key=Group.id_or_max) == sorted(app.group.get_group_list(), key=Group.id_or_max)
+    with allure.step('Add contact if group list is empty'):
+        if len(db.get_group_list()) == 0:
+            app.group.create(Group(name='For modify'))
+    with allure.step('Given a non-empty group list'):
+        old_groups = db.get_group_list()
+    with allure.step('Given a random group from the list and get new group data'):
+        group_old = random.choice(old_groups)
+    with allure.step('Set new group data'):
+        group_new = Group(id=group_old.id, name="lhjg", header="ytrff", footer="qwew")
+    with allure.step('When I modify the group %s from the list' % group_new):
+     app.group.modify_group_by_id(group_old.id, group_new)
+    with allure.step('Then the new group list is equal to the old list without the modified group'):
+        assert len(old_groups) == app.group.count()
+        new_groups = db.get_group_list()
+        old_groups.remove(group_old)
+        old_groups.append(group_new)
+        assert sorted(old_groups, key=Group.id_or_max) == new_groups
+        if check_ui:
+            assert sorted(new_groups, key=Group.id_or_max) == sorted(app.group.get_group_list(), key=Group.id_or_max)
 
 
 

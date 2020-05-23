@@ -1,0 +1,98 @@
+{
+  "uid" : "57645a199a3546cb",
+  "name" : "test_dell_contact_from_group",
+  "fullName" : "test.test_dell_contact_from_group#test_dell_contact_from_group",
+  "historyId" : "aa53252a930ce02711bd983a4f7670f9",
+  "time" : {
+    "start" : 1590251247058,
+    "stop" : 1590251247058,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "statusMessage" : "pony.orm.core.BindingError: Database object was already bound to MySQL provider",
+  "statusTrace" : "app = <fixture.application.Application object at 0x061AD1D8>\n\n    def test_dell_contact_from_group(app):\n>       db_f = ORMFixture(host=\"127.0.0.1\", name=\"addressbook\", user=\"root\", password=\"\")\n\ntest\\test_dell_contact_from_group.py:8: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nfixture\\orm.py:30: in __init__\n    self.db.bind(\"mysql\", host=host, database=name, user=user, password=password)\nenv\\lib\\site-packages\\pony\\orm\\core.py:769: in bind\n    self._bind(*args, **kwargs)\nenv\\lib\\site-packages\\pony\\orm\\core.py:773: in _bind\n    throw(BindingError, 'Database object was already bound to %s provider' % self.provider.dialect)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nexc_type = <class 'pony.orm.core.BindingError'>\nargs = ('Database object was already bound to MySQL provider',), kwargs = {}\n\n    def throw(exc_type, *args, **kwargs):\n        if isinstance(exc_type, Exception):\n            assert not args and not kwargs\n            exc = exc_type\n        else: exc = exc_type(*args, **kwargs)\n        exc.__cause__ = None\n        try:\n            if not (pony.MODE == 'INTERACTIVE' and options.CUT_TRACEBACK):\n>               raise exc\nE               pony.orm.core.BindingError: Database object was already bound to MySQL provider\n\nenv\\lib\\site-packages\\pony\\utils\\utils.py:106: BindingError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "stop",
+    "time" : {
+      "start" : 1590251179052,
+      "stop" : 1590251179052,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "app",
+    "time" : {
+      "start" : 1590251247023,
+      "stop" : 1590251247057,
+      "duration" : 34
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "afterStages" : [ {
+    "name" : "stop::fin",
+    "time" : {
+      "start" : 1590251260398,
+      "stop" : 1590251262593,
+      "duration" : 2195
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "test"
+  }, {
+    "name" : "suite",
+    "value" : "test_dell_contact_from_group"
+  }, {
+    "name" : "host",
+    "value" : "EYAZEVICH"
+  }, {
+    "name" : "thread",
+    "value" : "5140-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test.test_dell_contact_from_group"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "57645a199a3546cb.json",
+  "parameterValues" : [ ]
+}

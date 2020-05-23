@@ -1,0 +1,175 @@
+{
+  "uid" : "bc21dbe553f6dc76",
+  "name" : "test_add_contact[None:, , None, None]",
+  "fullName" : "test.test_add_contact#test_add_contact",
+  "historyId" : "862557fe38819bf3230a8adf5c73187e",
+  "time" : {
+    "start" : 1590251187366,
+    "stop" : 1590251188829,
+    "duration" : 1463
+  },
+  "status" : "broken",
+  "statusMessage" : "AttributeError: 'Contact' object has no attribute 'photo'",
+  "statusTrace" : "app = <fixture.application.Application object at 0x061AD1D8>\ndb = <fixture.db.DbFixture object at 0x061ADA18>\njson_contacts = None:, , None, None\n\n    def test_add_contact(app, db, json_contacts):\n        contact = json_contacts\n        with allure.step('Given a contact list'):\n            old_contacts = db.get_contact_list()\n        with allure.step('When I add a contact %s to the list' % contact):\n>           app.contact.create(contact)\n\ntest\\test_add_contact.py:11: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nfixture\\contact.py:94: in create\n    self.fill_contact_details(contact)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <fixture.contact.ContactHelper object at 0x061ADE98>\ncontact = None:, , None, None\n\n    def fill_contact_details(self, contact):\n        wd = self.app.wd\n        # input general info\n        self.app.change_field_value(name=\"firstname\", value=contact.first_name)\n        self.app.change_field_value(name=\"middlename\", value=contact.middle_name)\n        self.app.change_field_value(name=\"lastname\", value=contact.last_name)\n        self.app.change_field_value(name=\"nickname\", value=contact.nickname)\n>       if contact.photo is not None:\nE       AttributeError: 'Contact' object has no attribute 'photo'\n\nfixture\\contact.py:57: AttributeError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "app",
+    "time" : {
+      "start" : 1590251179058,
+      "stop" : 1590251187364,
+      "duration" : 8306
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "db",
+    "time" : {
+      "start" : 1590251179052,
+      "stop" : 1590251179058,
+      "duration" : 6
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "stop",
+    "time" : {
+      "start" : 1590251179052,
+      "stop" : 1590251179052,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "AttributeError: 'Contact' object has no attribute 'photo'",
+    "statusTrace" : "app = <fixture.application.Application object at 0x061AD1D8>\ndb = <fixture.db.DbFixture object at 0x061ADA18>\njson_contacts = None:, , None, None\n\n    def test_add_contact(app, db, json_contacts):\n        contact = json_contacts\n        with allure.step('Given a contact list'):\n            old_contacts = db.get_contact_list()\n        with allure.step('When I add a contact %s to the list' % contact):\n>           app.contact.create(contact)\n\ntest\\test_add_contact.py:11: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\nfixture\\contact.py:94: in create\n    self.fill_contact_details(contact)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <fixture.contact.ContactHelper object at 0x061ADE98>\ncontact = None:, , None, None\n\n    def fill_contact_details(self, contact):\n        wd = self.app.wd\n        # input general info\n        self.app.change_field_value(name=\"firstname\", value=contact.first_name)\n        self.app.change_field_value(name=\"middlename\", value=contact.middle_name)\n        self.app.change_field_value(name=\"lastname\", value=contact.last_name)\n        self.app.change_field_value(name=\"nickname\", value=contact.nickname)\n>       if contact.photo is not None:\nE       AttributeError: 'Contact' object has no attribute 'photo'\n\nfixture\\contact.py:57: AttributeError",
+    "steps" : [ {
+      "name" : "Given a contact list",
+      "time" : {
+        "start" : 1590251187367,
+        "stop" : 1590251187371,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
+    }, {
+      "name" : "When I add a contact None:, , None, None to the list",
+      "time" : {
+        "start" : 1590251187371,
+        "stop" : 1590251188825,
+        "duration" : 1454
+      },
+      "status" : "broken",
+      "statusMessage" : "AttributeError: 'Contact' object has no attribute 'photo'\n",
+      "statusTrace" : "  File \"D:\\education\\python\\course\\Py_for_testers\\work\\python_training\\test\\test_add_contact.py\", line 11, in test_add_contact\n    app.contact.create(contact)\n  File \"D:\\education\\python\\course\\Py_for_testers\\work\\python_training\\fixture\\contact.py\", line 94, in create\n    self.fill_contact_details(contact)\n  File \"D:\\education\\python\\course\\Py_for_testers\\work\\python_training\\fixture\\contact.py\", line 57, in fill_contact_details\n    if contact.photo is not None:\n",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true,
+      "stepsCount" : 0,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : true,
+    "stepsCount" : 2,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "db::fin",
+    "time" : {
+      "start" : 1590251262594,
+      "stop" : 1590251262594,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  }, {
+    "name" : "stop::fin",
+    "time" : {
+      "start" : 1590251260398,
+      "stop" : 1590251262593,
+      "duration" : 2195
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 0,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "test"
+  }, {
+    "name" : "suite",
+    "value" : "test_add_contact"
+  }, {
+    "name" : "host",
+    "value" : "EYAZEVICH"
+  }, {
+    "name" : "thread",
+    "value" : "5140-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test.test_add_contact"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "json_contacts",
+    "value" : "None:, , None, None"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "bc21dbe553f6dc76.json",
+  "parameterValues" : [ "None:, , None, None" ]
+}
