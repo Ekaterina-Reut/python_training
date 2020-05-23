@@ -1,0 +1,7 @@
+pytest
+pytest_bdd
+selenium
+jsonpicle
+pony
+pymysql
+mysql-connector-python-rf
