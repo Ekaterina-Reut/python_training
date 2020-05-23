@@ -65,9 +65,8 @@ class Contact:
         self.all_emails = self.merge_emails_like_homepage()
 
     def __repr__(self):
-        return "%s:%s, %s, %s, %s, %s, %s" % (self.id, self.last_name, self.first_name,
-                                              self.all_phones_from_homepage, self.all_emails_from_homepage,
-                                              self.all_phones,self.all_emails)
+        return "%s:%s, %s, %s, %s" % (self.id, self.last_name, self.first_name,
+                                              self.all_phones_from_homepage, self.all_emails_from_homepage)
 
     def __eq__(self, other):
         return (self.id is None or other.id is None or self.id == other.id) \
