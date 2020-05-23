@@ -66,7 +66,7 @@ def verify_contact_modified(db, non_empty_contact_list, random_contact, new_cont
     assert len(old_contacts) == len(new_contacts)
     old_contacts.remove(random_contact)
     old_contacts.append(new_contact)
-    assert sorted(old_contacts, key=Contact.id_or_max) == new_contacts
+    assert sorted(old_contacts, key=Contact.id_or_max) == sorted(new_contacts, key=Contact.id_or_max)
     if check_ui:
         assert sorted(new_contacts, key=Contact.id_or_max) == sorted(app.contact.get_contact_list(),
                                                                      key=Contact.id_or_max)
